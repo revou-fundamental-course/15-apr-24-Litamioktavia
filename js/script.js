@@ -1,5 +1,7 @@
 function onClickFunction() {
      var input = document.getElementById('celcius-input');
+     var element = document.getElementById('warning-input');
+     element.textContent = "";
     
      var value = input.value;
 
@@ -7,7 +9,6 @@ function onClickFunction() {
     var digitOnlyPattern = /^\d+$/;
 
     if(!digitOnlyPattern.test(value)) {
-        var element = document.getElementById('warning-input');
         element.textContent = "Please enter digit only";
     } else {
         var element = document.getElementById('result-number');

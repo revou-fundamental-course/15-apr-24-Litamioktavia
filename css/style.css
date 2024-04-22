@@ -97,9 +97,9 @@ span.description {
 }
 
 .conversion-area-wrapper .result-wrapper .scrollable{
-    max-width: 400px;
-    overflow-x: scroll;
-
+    width: 400px;
+    overflow-x: auto;
+    text-align: center;
 }
 .conversion-area-wrapper .result-wrapper .scrollable span {
     font-size: 90px;
@@ -124,7 +124,31 @@ span.description {
     color: red;
 }
 
+
+/* Style the scrollbar */
+.scrollable::-webkit-scrollbar {
+    width: 2px; /* Width of the scrollbar */
+}
+
+/* Track */
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Color of the track */
+}
+
+/* Handle */
+.scrollable::-webkit-scrollbar-thumb {
+    background: #888; /* Color of the handle */
+}
+
+/* Handle on hover */
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Color of the handle when hovered */
+}
+
 @media only screen and (max-width: 768px) {
+    .conversion-area-wrapper .result-wrapper .scrollable{ 
+        width: 100%;
+    }
     .conversion-area-wrapper {
         flex-direction: column;
         flex-wrap: nowrap;
@@ -135,7 +159,7 @@ span.description {
         border-top-left-radius: 10px;
         border-bottom-right-radius: 0;
         border-bottom-left-radius: 0;
-        padding: 5px;
+        padding: 20px 5px;
     }
     .conversion-area-wrapper > div {
         flex: 0 0 100%;
@@ -154,5 +178,8 @@ span.description {
     .conversion-area-wrapper .result-wrapper .title,
     .conversion-area-wrapper .result-wrapper .scrollable span {
         font-size: 40px;
+    }
+    .formula-wrapper {
+        gap: 5px;
     }
 }
